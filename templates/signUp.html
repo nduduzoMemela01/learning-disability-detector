@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body  style="margin:0; min-height:100vh; display:flex; flex-direction:column;">
+
+    <div style="flex-grow:1; text-align:center; padding-top:50px;">>
+    <h2>Sign Up</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        First Name:<br>
+        <input type="text" name="first_name" required><br><br>
+
+        Last Name:<br>
+        <input type="text" name="last_name" required><br><br>
+
+        Email:<br>
+        <input type="email" name="email" required><br><br>
+
+        Password:<br>
+        <input type="password" name="password" required><br><br>
+
+        Role:<br>
+        <select name="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select><br><br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</body>
+</html>
+
+

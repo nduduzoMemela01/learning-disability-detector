@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body style="margin:0; min-height:100vh; display:flex; flex-direction:column;">
+
+    <div style="flex-grow:1; text-align:center; padding-top:50px;">
+        <h1>Welcome!</h1>
+        <p>
+            <a href="{{ url_for('login') }}">Login</a> or
+            <a href="{{ url_for('signup') }}">Sign Up</a>
+        </p>
+    </div>
+
+    <footer style="text-align:center; padding: 10px 0; border-top:1px solid #ccc;">
+        <a href="{{ url_for('about') }}">About Us</a>
+    </footer>
+
+</body>
+</html>
